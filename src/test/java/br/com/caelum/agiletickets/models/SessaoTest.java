@@ -7,11 +7,11 @@ public class SessaoTest {
 
 
 	@Test
-	public void deveVender1ingressoSeHa2vagas() throws Exception {
+	public void deveVenderIngressoSeHavagas() throws Exception {
 		Sessao sessao = new Sessao();
         sessao.setTotalIngressos(2);
 
-        Assert.assertTrue(sessao.podeReservar(1));
+        Assert.assertTrue(sessao.podeReservar(2));
 	}
 
 	@Test
@@ -20,14 +20,6 @@ public class SessaoTest {
 		sessao.setTotalIngressos(2);
 
 		Assert.assertFalse(sessao.podeReservar(3));
-	}
-	
-	@Test
-	public void deveVenderIngressoSeHavagas() throws Exception {
-		Sessao sessao = new Sessao();
-		sessao.setTotalIngressos(2);
-
-		Assert.assertTrue(sessao.podeReservar(2));
 	}
 
 	@Test
