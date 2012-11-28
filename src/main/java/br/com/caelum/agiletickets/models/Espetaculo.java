@@ -96,37 +96,46 @@ public class Espetaculo {
       * Repare que a data da primeira sessao é sempre a data inicial.
       */
 	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
-		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
 		return null;
 	}
 	
-	public boolean vagas(int qtd, int min)
+	public boolean temDisponibilidadePara(int quantidadeRequisitada, int minimoPorSessao)
     {
-        // ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
-        int totDisp = 0;
+		int totalDisponivel = obtemTotalDeIngressosDisponiveis();
 
-        for (Sessao s : sessoes)
+        return (totalDisponivel >= quantidadeRequisitada) && (temMinimoDisponivelPorSessaoPara(minimoPorSessao));
+    }
+	
+	public boolean temMinimoDisponivelPorSessaoPara(int quantidadeMinima) {
+    	
+    	for (Sessao sessao : sessoes)
         {
-            if (s.getIngressosDisponiveis() < min) return false;
-            totDisp += s.getIngressosDisponiveis();
+    		 if (sessao.getIngressosDisponiveis() < quantidadeMinima) return false;
         }
-
-        if (totDisp >= qtd) return true;
-        else return false;
+    	
+    	return true;
+    	
     }
 
-    public boolean vagas(int qtd)
+    public boolean temDisponibilidadePara(int quantidadeRequisitada)
     {
-        // ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
-        int totDisp = 0;
+        int totalDisponivel = obtemTotalDeIngressosDisponiveis();
 
-        for (Sessao s : sessoes)
+        return totalDisponivel >= quantidadeRequisitada;
+        
+    }
+    
+    public int obtemTotalDeIngressosDisponiveis() {
+    	
+    	int totalDisponivel = 0;
+    	
+    	for (Sessao sessao : sessoes)
         {
-            totDisp += s.getIngressosDisponiveis();
+            totalDisponivel += sessao.getIngressosDisponiveis();
         }
-
-        if (totDisp >= qtd) return true;
-        else return false;
+    	
+    	return totalDisponivel;
+    	
     }
 
 }

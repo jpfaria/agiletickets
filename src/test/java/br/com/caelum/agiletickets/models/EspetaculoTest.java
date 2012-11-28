@@ -15,7 +15,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertTrue(ivete.vagas(5));
+		assertTrue(ivete.temDisponibilidadePara(5));
 	}
 
 	@Test
@@ -26,51 +26,51 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertTrue(ivete.vagas(6));
+		assertTrue(ivete.temDisponibilidadePara(6));
 	}
 
 	@Test
-	public void DeveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes() {
+	public void deveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(1));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertFalse(ivete.vagas(15));
+		assertFalse(ivete.temDisponibilidadePara(15));
 	}
 
 	@Test
-	public void DeveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
+	public void deveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(4));
 
-		assertTrue(ivete.vagas(5, 3));
+		assertTrue(ivete.temDisponibilidadePara(5, 3));
 	}
 
 	@Test
-	public void DeveInformarSeEhPossivelReservarAQuantidadeExataDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
+	public void deveInformarSeEhPossivelReservarAQuantidadeExataDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(4));
 
-		assertTrue(ivete.vagas(10, 3));
+		assertTrue(ivete.temDisponibilidadePara(10, 3));
 	}
 
 	@Test
-	public void DeveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
+	public void deveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertFalse(ivete.vagas(5, 3));
+		assertFalse(ivete.temDisponibilidadePara(5, 3));
 	}
 
 	private Sessao sessaoComIngressosSobrando(int quantidade) {
