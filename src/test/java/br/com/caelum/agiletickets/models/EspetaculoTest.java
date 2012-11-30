@@ -86,7 +86,7 @@ public class EspetaculoTest {
 		Espetaculo ivete = new Espetaculo();
 		
 		LocalDate inicio = new LocalDate(2012, 11, 20);
-		LocalDate fim = new LocalDate(2012, 11, 21);
+		LocalDate fim = new LocalDate(2012, 11, 20);
 		LocalTime horario = new LocalTime(19, 30) ;
 		
 		ivete.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);

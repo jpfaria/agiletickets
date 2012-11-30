@@ -101,7 +101,7 @@ public class Espetaculo {
 		
 		int intervalo = Days.daysBetween(inicio, fim).getDays();
 		
-		for (int i = 0; i < intervalo; i++) {
+		for (int i = 0; i <= intervalo; i++) {
 			
 			LocalDate ds = inicio.plusDays(i);
 			
