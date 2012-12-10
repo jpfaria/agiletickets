@@ -9,9 +9,9 @@
 		
 		<properties>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/agiletickets" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://10.0.35.10/agiletickets" />
 			<property name="hibernate.connection.username" value="root" />
-			<property name="hibernate.connection.password" value="" />
+			<property name="hibernate.connection.password" value="root" />
 			<property name="hibernate.connection.pool_size" value="5" />
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
