@@ -11,8 +11,8 @@ import org.junit.Test;
 
 public class EspetaculoTest {
 
-	private static final LocalDate LocalDate = null;
-	private static final String LocalTime = null;
+	//private static final LocalDate LocalDate = null;
+	//private static final String LocalTime = null;
 
 	@Test
 	public void deveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes() {

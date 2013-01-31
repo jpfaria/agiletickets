@@ -13,6 +13,17 @@ public class EstabelecimentosDriver {
 
 	private static final String BASE_URL = "http://localhost:8080";
 	private final WebDriver driver;
+
+	private Matcher<String> is(String nome) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Matcher<String> containsString(String erro) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public EstabelecimentosDriver(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -34,20 +45,9 @@ public class EstabelecimentosDriver {
 		assertThat(ultimaLinha.findElements(By.tagName("td")).get(2).getText(), is(endereco));
 	}
 
-	private Matcher<String> is(String nome) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public void deveMostrarErro(String erro) {
 		WebElement erros = driver.findElement(By.id("errors"));
-
 		assertThat(erros.getText(), containsString(erro));
-	}
-
-	private Matcher<String> containsString(String erro) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public void adicioneEstabelecimentoComEstacionamento(boolean temEstacionamento) {
